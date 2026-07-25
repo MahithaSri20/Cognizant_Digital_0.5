@@ -2,10 +2,12 @@ package com.cognizant.countryservice.service;
 
 import com.cognizant.countryservice.model.Country;
 import com.cognizant.countryservice.repository.CountryRepository;
+import com.cognizant.countryservice.service.exception.CountryNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CountryService {
@@ -15,31 +17,36 @@ public class CountryService {
 
 
     // Find country by code
-    public Country getCountry(String code) {
-        return countryRepository.findById(code).orElse(null);
+    @Transactional
+    public Country findCountryByCode(String countryCode) throws CountryNotFoundException {
+
+        Optional<Country> result = countryRepository.findById(countryCode);
+
+        if (!result.isPresent()) {
+            throw new CountryNotFoundException(
+                    "Country not found with code: " + countryCode
+            );
+        }
+
+        return result.get();
     }
 
 
     // Add new country
+    @Transactional
     public Country addCountry(Country country) {
+
         return countryRepository.save(country);
+
     }
 
 
     // Update country
+    @Transactional
     public Country updateCountry(Country country) {
+
         return countryRepository.save(country);
+
     }
 
-
-    // Delete country
-    public void deleteCountry(String code) {
-        countryRepository.deleteById(code);
-    }
-
-
-    // Find countries by partial name
-    public List<Country> searchCountry(String name) {
-        return countryRepository.findByNameContaining(name);
-    }
 }
