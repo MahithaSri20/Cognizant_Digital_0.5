@@ -1,0 +1,30 @@
+### Get country by code
+GET http://localhost:8080/countries/IN
+
+
+### Add country
+POST http://localhost:8080/countries
+Content-Type: application/json
+
+{
+  "code": "JP",
+  "name": "Japan"
+}
+
+
+### Search country by name
+GET http://localhost:8080/countries/search/Ind
+
+
+### Update country
+PUT http://localhost:8080/countries
+Content-Type: application/json
+
+{
+  "code": "JP",
+  "name": "Japan Updated"
+}
+
+
+### Delete country
+DELETE http://localhost:8080/countries/JP
