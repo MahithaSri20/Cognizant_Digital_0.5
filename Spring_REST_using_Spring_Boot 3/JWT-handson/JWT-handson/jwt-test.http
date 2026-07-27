@@ -1,0 +1,7 @@
+### Generate JWT Token
+
+GET http://localhost:8090/authenticate
+Authorization: Basic dXNlcjpwd2Q=
+###
+GET http://localhost:8090/authenticate
+Authorization: Basic dXNlcjpwd2Q=
