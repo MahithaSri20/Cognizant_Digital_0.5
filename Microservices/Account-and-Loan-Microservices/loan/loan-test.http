@@ -1,0 +1,2 @@
+### Get Loan Details
+GET http://localhost:8081/loans/H00987987972342
