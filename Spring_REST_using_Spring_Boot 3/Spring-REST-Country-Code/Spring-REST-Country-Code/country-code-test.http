@@ -1,0 +1,18 @@
+### Get India by country code
+GET http://localhost:8083/countries/IN
+
+
+### Get India using lowercase code
+GET http://localhost:8083/countries/in
+
+
+### Get Germany
+GET http://localhost:8083/countries/de
+
+
+### Get Japan
+GET http://localhost:8083/countries/jp
+
+
+### Get United States
+GET http://localhost:8083/countries/us
