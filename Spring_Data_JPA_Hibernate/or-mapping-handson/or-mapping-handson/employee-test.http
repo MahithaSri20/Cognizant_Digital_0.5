@@ -1,0 +1,57 @@
+### Add Address
+
+POST http://localhost:8080/addresses
+Content-Type: application/json
+
+{
+  "id":101,
+  "city":"Visakhapatnam",
+  "state":"AP"
+}
+
+###
+### Add Employee
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id":1,
+  "name":"John",
+  "department":"IT",
+  "address":{
+    "id":101
+  }
+}
+###
+GET http://localhost:8080/employees
+### Add another Address
+
+POST http://localhost:8080/addresses
+Content-Type: application/json
+
+{
+  "id":102,
+  "city":"Hyderabad",
+  "state":"Telangana"
+}
+
+###
+
+### Add another Employee
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id":2,
+  "name":"Alice",
+  "department":"HR",
+  "address":{
+    "id":102
+  }
+}
+
+###
+
+GET http://localhost:8080/employees
