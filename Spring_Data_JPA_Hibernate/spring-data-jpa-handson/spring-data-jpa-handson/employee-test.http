@@ -1,0 +1,93 @@
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "John",
+  "department": "IT",
+  "salary": 60000
+}
+###
+
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Alice",
+  "department": "HR",
+  "salary": 45000
+}
+###
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "David",
+  "department": "IT",
+  "salary": 75000
+}
+###
+GET http://localhost:8080/employees
+### Add Employee 1
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "John",
+  "department": "IT",
+  "salary": 60000
+}
+
+###
+
+### Add Employee 2
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 2,
+  "name": "Alice",
+  "department": "HR",
+  "salary": 45000
+}
+
+###
+
+### Add Employee 3
+POST http://localhost:8080/employees
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "David",
+  "department": "IT",
+  "salary": 75000
+}
+
+###
+
+### Get All Employees
+GET http://localhost:8080/employees
+
+###
+
+### Query Method 1: Find Employee By Name
+GET http://localhost:8080/employees/name/John
+
+###
+
+### Query Method 2: Find Employees By Department
+GET http://localhost:8080/employees/department/IT
+
+###
+
+### Query Method 3: Find Employees Salary Greater Than
+GET http://localhost:8080/employees/salary/50000
+
+###
+
+### Query Method 4: Find Employee Name Contains
+GET http://localhost:8080/employees/search/oh
